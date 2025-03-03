@@ -1,0 +1,18 @@
+*** Unit Test Error Report ***
+
+ PASS  1-JavaScript/Week3/assignment/ex3-lemonAllergy.test.js
+  ✅ sanitizeFruitBasket should return the same array if the allergic fruit is not present
+  ✅ sanitizeFruitBasket should return an empty array if all fruits are lemons (2 ms)
+  ✅ sanitizeFruitBasket should return an empty array if the fruit basket is empty
+  js-wk3-ex3-lemonAllergy
+    ✅ sanitizeFruitBasket should take two parameters (1 ms)
+    ✅ sanitizeFruitBasket should not modify the original `fruitBasket` array (1 ms)
+    ✅ sanitizeFruitBasket should return a new array that does not include the unwanted `lemon`
+
+Test Suites: 1 passed, 1 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        0.206 s, estimated 1 s
+Ran all test suites matching /\/Users\/ibraheem\/Desktop\/HYF\/Assignments-cohort52\/1-JavaScript\/Week3\/assignment\/ex3-lemonAllergy.test.js/i.
+No linting errors detected.
+No spelling errors detected.
