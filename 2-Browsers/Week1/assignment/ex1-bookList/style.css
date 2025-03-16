@@ -1,1 +1,16 @@
-/* Write your style here */
+* {
+  box-sizing: border-box;
+}
+
+.book-list {
+  display: flex;
+  gap: 20px;
+}
+.book {
+  list-style: none;
+}
+
+.book p {
+  padding: 5px;
+  font-weight: 600;
+}

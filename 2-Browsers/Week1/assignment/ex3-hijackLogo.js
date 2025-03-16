@@ -7,7 +7,14 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
    HackYourFuture logo instead.
 ------------------------------------------------------------------------------*/
 function hijackGoogleLogo() {
-  // TODO your code goes in here
+  const googleIcon = document.querySelectorAll('[alt="Google"]')[0];
+
+  googleIcon.forEach((icon) => {
+    icon.src =
+      'https://github.com/HackYourFuture/Assignments/blob/main/assets/hyf-logo-black-bg-small.png?raw=true';
+    icon.srcset =
+      'https://github.com/HackYourFuture/Assignments/blob/main/assets/hyf-logo-black-bg-small.png?raw=true';
+  });
 }
 
 hijackGoogleLogo();
