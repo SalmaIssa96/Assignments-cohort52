@@ -36,9 +36,8 @@ function catWalk() {
   let moveInterval;
 
   function moveCat() {
-    if (isDancing) return;
-
-    if (!hasDanced && leftValue >= (window.innerWidth - catImage.width) / 2) {
+    const midPosition = (window.innerWidth - catImage.width) / 2;
+    if (!hasDanced && leftValue >= midPosition) {
       isDancing = true;
       hasDanced = true;
       clearInterval(moveInterval);

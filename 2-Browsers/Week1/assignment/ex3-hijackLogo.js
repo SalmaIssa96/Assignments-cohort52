@@ -8,14 +8,13 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 ------------------------------------------------------------------------------*/
 function hijackGoogleLogo() {
   const googleIcon = document.querySelector('[alt="Google"]');
-  console.log(googleIcon);
 
-  googleIcon.forEach((icon) => {
+  if (googleIcon) {
     icon.src =
       'https://github.com/HackYourFuture/Assignments/blob/main/assets/hyf-logo-black-bg-small.png?raw=true';
     icon.srcset =
       'https://github.com/HackYourFuture/Assignments/blob/main/assets/hyf-logo-black-bg-small.png?raw=true';
-  });
+  }
 }
 
 hijackGoogleLogo();
