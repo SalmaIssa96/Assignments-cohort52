@@ -20,38 +20,46 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
+const WALK_SPEED = 10;
+const CAT_WALK_INTERVAL = 50;
+const PAUSE_DURATION = 5000;
+const DANCING_CAT_URL =
+  'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
+const WALKING_CAT_URL =
+  'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+
 function catWalk() {
   const catImage = document.querySelector('img');
   let leftValue = 0;
-  const moveInterval = setInterval(() => {
-    if (leftValue < (window.innerWidth - catImage.width) / 2) {
-      leftValue = leftValue + 10;
-    } else {
-      clearInterval(moveInterval);
-      catImage.setAttribute(
-        'src',
-        'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif'
-      );
-      setTimeout(() => {
-        catImage.setAttribute(
-          'src',
-          'http://www.anniemation.com/clip_art/images/cat-walk.gif'
-        );
-        const moveIntervalAgain = setInterval(() => {
-          if (leftValue < window.innerWidth - catImage.width - 10) {
-            leftValue += 10;
-            catImage.style.left = `${leftValue}px`;
-          } else {
-            leftValue = 0;
-            clearInterval(moveIntervalAgain);
-            catWalk();
-          }
-        }, 50);
-      }, 5000);
-    }
+  let isDancing = false;
+  let hasDanced = false;
+  let moveInterval;
 
-    catImage.style.left = `${leftValue}px`;
-  }, 50);
+  function moveCat() {
+    if (isDancing) return;
+
+    if (!hasDanced && leftValue >= (window.innerWidth - catImage.width) / 2) {
+      isDancing = true;
+      hasDanced = true;
+      clearInterval(moveInterval);
+      catImage.src = DANCING_CAT_URL;
+
+      setTimeout(() => {
+        catImage.src = WALKING_CAT_URL;
+        isDancing = false;
+        moveInterval = setInterval(moveCat, CAT_WALK_INTERVAL);
+      }, PAUSE_DURATION);
+    } else if (leftValue < window.innerWidth - catImage.width) {
+      leftValue += WALK_SPEED;
+      catImage.style.left = `${leftValue}px`;
+    } else {
+      leftValue = 0;
+      catImage.style.left = '0px';
+      hasDanced = false;
+    }
+  }
+
+  moveInterval = setInterval(moveCat, CAT_WALK_INTERVAL);
 }
 
 window.addEventListener('load', catWalk);

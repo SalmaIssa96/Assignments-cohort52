@@ -21,8 +21,7 @@ function createBookList(books) {
   bookList.classList.add('book-list');
 
   books.forEach((book) => {
-    const { title, author, alreadyRead } = book;
-    const imageSource = `${title.toLowerCase().split(' ').join('_')}.jpg`;
+    const { title, author, alreadyRead, image } = book;
 
     const bookTitleAuthor = document.createElement('p');
     const content = document.createTextNode(`${title} by ${author}`);
@@ -34,8 +33,9 @@ function createBookList(books) {
     bookItem.style.background = `${alreadyRead ? 'green' : 'red'}`;
 
     const bookImage = document.createElement('img');
-    bookImage.setAttribute('src', `./assets/${imageSource}`);
-    bookImage.setAttribute('alt', `${title}`);
+
+    bookImage.src = image;
+    bookImage.alt = title;
 
     bookItem.appendChild(bookTitleAuthor);
     bookItem.appendChild(bookImage);
@@ -51,18 +51,21 @@ function main() {
       author: 'Don Norman',
       isbn: '978-0465050659',
       alreadyRead: false,
+      image: './assets/the_design_of_everyday_things.jpg',
     },
     {
       title: 'The Most Human Human',
       author: 'Brian Christian',
       isbn: '978-1617933431',
       alreadyRead: true,
+      image: './assets/the_most_human_human.jpg',
     },
     {
       title: 'The Pragmatic Programmer',
       author: 'Andrew Hunt',
       isbn: '978-0201616224',
       alreadyRead: true,
+      image: './assets/the_pragmatic_programmer.jpg',
     },
   ];
 

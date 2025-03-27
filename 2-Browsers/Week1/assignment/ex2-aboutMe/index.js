@@ -7,14 +7,14 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
    `list-item`.
 3. Look in the css file!
 ------------------------------------------------------------------------------*/
+const addTextToElement = (elemntId, text) => {
+  const element = document.getElementById(elemntId);
+  element.textContent = text;
+};
 
-const nicknameSpan = document.getElementById('nickname');
-const favFoodSpan = document.getElementById('fav-food');
-const hometownSpan = document.getElementById('hometown');
-
-nicknameSpan.innerText = 'Salma';
-favFoodSpan.innerText = 'Maqluba';
-hometownSpan.innerText = 'Palestine';
+const nicknameSpan = addTextToElement('nickname', 'salma');
+const favFoodSpan = addTextToElement('fav-food', 'Maqluba');
+const hometownSpan = addTextToElement('hometown', 'Palestine');
 
 const listItems = document.querySelectorAll('li');
 

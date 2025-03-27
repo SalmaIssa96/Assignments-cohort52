@@ -7,7 +7,8 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
    HackYourFuture logo instead.
 ------------------------------------------------------------------------------*/
 function hijackGoogleLogo() {
-  const googleIcon = document.querySelectorAll('[alt="Google"]')[0];
+  const googleIcon = document.querySelector('[alt="Google"]');
+  console.log(googleIcon);
 
   googleIcon.forEach((icon) => {
     icon.src =

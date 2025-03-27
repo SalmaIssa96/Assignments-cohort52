@@ -10,7 +10,7 @@ function addCurrentTime() {
   const time = document.createElement('p');
 
   setInterval(() => {
-    time.innerText = new Date().toLocaleTimeString();
+    time.textContent = new Date().toLocaleTimeString();
   }, 1000);
 
   document.body.appendChild(time);
