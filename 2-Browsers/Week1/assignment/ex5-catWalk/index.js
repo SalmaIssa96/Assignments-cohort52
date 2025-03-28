@@ -31,21 +31,18 @@ const WALKING_CAT_URL =
 function catWalk() {
   const catImage = document.querySelector('img');
   let leftValue = 0;
-  let isDancing = false;
   let hasDanced = false;
   let moveInterval;
 
   function moveCat() {
     const midPosition = (window.innerWidth - catImage.width) / 2;
     if (!hasDanced && leftValue >= midPosition) {
-      isDancing = true;
       hasDanced = true;
       clearInterval(moveInterval);
       catImage.src = DANCING_CAT_URL;
 
       setTimeout(() => {
         catImage.src = WALKING_CAT_URL;
-        isDancing = false;
         moveInterval = setInterval(moveCat, CAT_WALK_INTERVAL);
       }, PAUSE_DURATION);
     } else if (leftValue < window.innerWidth - catImage.width) {
