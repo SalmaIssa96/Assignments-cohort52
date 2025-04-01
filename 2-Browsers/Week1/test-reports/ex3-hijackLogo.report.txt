@@ -8,13 +8,13 @@ console.log
  PASS  .dist/2-Browsers/Week1/unit-tests/ex3-hijackLogo.test.js
   br-wk1-ex3-hijackLogo
     ✅ should have all TODO comments removed (1 ms)
-    ✅ should set the `.src` property (1 ms)
-    ✅ should set the `.srcset` property
+    ✅ should set the `.src` property
+    ✅ should set the `.srcset` property (1 ms)
 
 Test Suites: 1 passed, 1 total
 Tests:       3 passed, 3 total
 Snapshots:   0 total
-Time:        0.273 s, estimated 1 s
+Time:        0.269 s, estimated 1 s
 Ran all test suites matching /\/Users\/ibraheem\/Desktop\/HYF\/Assignments-cohort52\/.dist\/2-Browsers\/Week1\/unit-tests\/ex3-hijackLogo.test.js/i.
 No linting errors detected.
 No spelling errors detected.
